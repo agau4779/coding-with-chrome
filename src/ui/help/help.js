@@ -73,6 +73,19 @@ cwc.ui.Help.prototype.showOpenSource = function() {
   });
 };
 
+cwc.ui.Help.prototype.showChangelog = function() {
+  let dialogInstance = this.helper.getInstance('dialog');
+  dialogInstance.showTemplate('Coding with Chrome changelog',
+    cwc.soy.Help.notice, {
+      prefix: this.prefix,
+      is_chrome_app: this.chromeApp_,
+    });
+  let noticeWebview = goog.dom.getElement(this.prefix + 'webview-notice');
+  noticeWebview.addEventListener('contentload', function() {
+    noticeWebview['insertCSS']({'code': 'html {overflow-y: scroll;}'});
+  });
+};
+
 
 cwc.ui.Help.prototype.showHelp = function() {
   let dialogInstance = this.helper.getInstance('dialog');

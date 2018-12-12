@@ -120,3 +120,20 @@
 
 </div>
 {/template}
+
+
+/**
+ * Changelog information.
+ */
+{template .changelog}
+  {@param prefix: string}
+  {@param is_chrome_app: bool}
+
+  {if $is_chrome_app}
+    <webview id="{$prefix}webview-notice" partition="static"
+      src="../CHANGELOG.html" style="width: 600px; height: 500px;"></webview>
+  {else}
+    <iframe id="{$prefix}webview-notice"
+      src="../CHANGELOG.html" style="width: 600px; height: 500px;"></iframe>
+  {/if}
+{/template}

@@ -42,6 +42,7 @@ closureBuilder.build({
   markdown: [
     'LICENSE.md',
     'NOTICE.md',
+    'CHANGELOG.md',
   ],
   replace: [
     ['nw-js', 'nwjs'],
